@@ -20,6 +20,10 @@
   <dd><%= @store.website %></dd>
   <dt><strong><%= model_class.human_attribute_name(:confirmation) %>:</strong></dt>
   <dd><%= @store.confirmation %></dd>
+  <dd><% @store.images.each do |i| %>
+      <%= image_tag i.avatar.url(:thumb) %>
+  <% end %></dd>
+   
 </dl>
 
 <%= link_to t('.back', :default => t("helpers.links.back")),

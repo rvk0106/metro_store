@@ -8,6 +8,9 @@
   <dd><%= @product_category.name %></dd>
   <dt><strong><%= model_class.human_attribute_name(:store_id) %>:</strong></dt>
   <dd><%= @product_category.store_id %></dd>
+  <dd><% @product_category.images.each do |i| %>
+      <%= image_tag i.avatar.url(:medium) %>
+        <% end %></dd>
 </dl>
 
 <%= link_to t('.back', :default => t("helpers.links.back")),

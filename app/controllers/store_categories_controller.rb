@@ -1,4 +1,4 @@
-class StoreCategoriesController < ApplicationController
+  class StoreCategoriesController < ApplicationController
   before_action :set_store_category, only: [:show, :edit, :update, :destroy]
 
   # GET /store_categories
@@ -69,6 +69,6 @@ class StoreCategoriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def store_category_params
-      params.require(:store_category).permit(:name)
+      params.require(:store_category).permit(:name, :images_attributes => [:avatar])
     end
 end

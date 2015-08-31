@@ -29,7 +29,14 @@
     </div>
     <%= error_span(@product_category[:store_id]) %>
   </div>
-
+  <div class="control-group">
+  <%= f.fields_for :images, @product_category.images.build do |i| %>
+    <div class="controls">
+      <%= i.file_field :avatar, class: 'form-control' %><br />
+    </div>
+  <% end %>
+  </div>
+ 
 
   <%= f.submit nil, :class => 'btn btn-primary' %>
   <%= link_to t('.cancel', :default => t("helpers.links.cancel")),

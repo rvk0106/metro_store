@@ -16,35 +16,62 @@
   <% end %>
 
   <div class="control-group">
-    <%= f.label :name, :class => 'control-label' %>
+    <%= f.label :name, :class => 'control-label' %><br /><br />
     <div class="controls">
       <%= f.text_field :name, :class => 'form-control' %>
     </div>
     <%= error_span(@product[:name]) %>
   </div>
+
+
   <div class="control-group">
-    <%= f.label :cost, :class => 'control-label' %>
+    <%= f.label :cost, :class => 'control-label' %><br /><br />
     <div class="controls">
       <%= f.text_field :cost, :class => 'form-control' %>
     </div>
     <%= error_span(@product[:cost]) %>
   </div>
+
+
   <div class="control-group">
-    <%= f.label :product_category_id, :class => 'control-label' %>
+    <%= f.label :product_category_id, :class => 'control-label' %><br /><br />
     <div class="controls">
       <%= f.text_field :product_category_id, :class => 'form-control' %>
     </div>
     <%= error_span(@product[:product_category_id]) %>
   </div>
+
+
   <div class="control-group">
-    <%= f.label :descripition, :class => 'control-label' %>
+    <%= f.label :descripition, :class => 'control-label' %><br /><br />
     <div class="controls">
       <%= f.text_field :descripition, :class => 'form-control' %>
     </div>
-    <%= error_span(@product[:descripition]) %>
+    <%= error_span(@product[:descripition]) %><br />
   </div>
 
+  
+ <div class="control-group">
+ <%=  f.fields_for :images, @product.images.build do |t| %> 
+         
+    <div class="controls">
+      <%= t.file_field :avatar, :class => 'form-control' %><br />
+    </div>
 
+    <div class="controls">
+      <%= t.file_field :avatar, :class => 'form-control' %><br />
+    </div>
+
+    <div class="controls">
+      <%= t.file_field :avatar, :class => 'form-control' %><br />
+    </div>
+
+  <div class="controls">
+      <%= t.file_field :avatar, :class => 'form-control' %><br />
+    </div>
+
+    <%end%>
+  </div>   
   <%= f.submit nil, :class => 'btn btn-primary' %>
   <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
             products_path, :class => 'btn btn-default' %>
